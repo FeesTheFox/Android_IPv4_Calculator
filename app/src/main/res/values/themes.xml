@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.IPv4_Calculator" parent="Theme.Material3.DayNight.NoActionBar">
+            <item name="android:textColor">#333333</item>
+            <item name="android:fontFamily">@font/pixelifysans_regular</item>
+            <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Theme.IPv4_Calculator" parent="Base.Theme.IPv4_Calculator" />
+</resources>

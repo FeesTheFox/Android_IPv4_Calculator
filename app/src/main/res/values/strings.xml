@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">IPv4 Calculator</string>
+    <string name="Exit">Exit</string>
+    <string name="calculate">Calculate</string>
+    <string name="mask">Mask</string>
+    <string name="ipv4">Write IPv4</string>
+    <string name="ipv4_hint">Write IPv4</string>
+    <string name="info">This app is for calculating length of a mask, subnet address and broadcast address</string>
+    <string name="info2">Choose mask in the right corner and write down your IP address in the left corner (max IP address is 15 symbols)</string>
+    <string name="BackToCalc">Back to Calculator</string>
+    <string name="informationAboutActivity">Info</string>
+    <string name="To_Results">To Results</string>
+
+    <string-array name="mask_array">
+        <item>255.255.255.255</item>
+        <item>255.255.255.254</item>
+        <item>255.255.255.252</item>
+        <item>255.255.255.248</item>
+        <item>255.255.255.240</item>
+        <item>255.255.255.224</item>
+        <item>255.255.255.192</item>
+        <item>255.255.255.128</item>
+        <item>255.255.255.0</item>
+        <item>255.255.254.0</item>
+        <item>255.255.252.0</item>
+        <item>255.255.248.0</item>
+        <item>255.255.240.0</item>
+        <item>255.255.224.0</item>
+        <item>255.255.192.0</item>
+        <item>255.255.128.0</item>
+        <item>255.255.0.0</item>
+        <item>255.254.0.0</item>
+        <item>255.252.0.0</item>
+        <item>255.248.0.0</item>
+        <item>255.240.0.0</item>
+        <item>255.224.0.0</item>
+        <item>255.192.0.0</item>
+        <item>255.128.0.0</item>
+        <item>255.0.0.0</item>
+        <item>254.0.0.0</item>
+        <item>252.0.0.0</item>
+        <item>248.0.0.0</item>
+        <item>240.0.0.0</item>
+        <item>224.0.0.0</item>
+        <item>192.0.0.0</item>
+        <item>128.0.0.0</item>
+        <item>0.0.0.0</item>
+    </string-array>
+</resources>
