@@ -1,122 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/itchiocover_copy">
+    android:orientation="horizontal"
+    android:baselineAligned="false">
 
-    <ImageView
-        android:id="@+id/sun"
-        android:layout_width="71dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="32dp"
-        android:src="@drawable/baseline_brightness_1_24"
-        app:layout_constraintBottom_toTopOf="@+id/btnForward"
-        app:layout_constraintEnd_toStartOf="@+id/spinner"
-        app:layout_constraintStart_toEndOf="@+id/editText"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </ImageView>
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="171dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="32dp"
-        android:hint="@string/ipv4_hint"
-        android:background="@drawable/button_style"
-        android:fontFamily="@font/pixelifysans_regular"
-        android:inputType="text"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toStartOf="@+id/spinner"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </EditText>
+    <androidx.fragment.app.FragmentContainerView
+        android:name="com.example.ipv4_calculator.Fragment1"
+        android:id="@+id/fragment1_container_view"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+    </androidx.fragment.app.FragmentContainerView>
 
 
-
-    <TextView
-        android:id="@+id/text_mask"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="@string/mask"
-        android:fontFamily="@font/pixelifysans_regular"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@id/spinner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toEndOf="@+id/editText"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
-
-    </TextView>
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="190dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/button_style"
-        android:entries="@array/mask_array"
-        android:fontFamily="@font/pixelifysans_regular"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_mask">
-
-    </Spinner>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnCalculate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/button_style"
-        android:fontFamily="@font/pixelifysans_regular"
-        android:text="@string/calculate"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-    </androidx.appcompat.widget.AppCompatButton>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnExit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/button_style"
-        android:fontFamily="@font/pixelifysans_regular"
-        android:text="@string/Exit"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </androidx.appcompat.widget.AppCompatButton>
-
-
-
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnForward"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_style"
-        android:text="@string/To_Results"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnCalculate"
-        app:layout_constraintStart_toEndOf="@+id/btnExit"
-        app:layout_constraintTop_toBottomOf="@id/sun">
-
-    </androidx.appcompat.widget.AppCompatButton>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
