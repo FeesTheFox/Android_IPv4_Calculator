@@ -12,10 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IPv4_Calculator"
         tools:targetApi="31">
-        <activity
-            android:name=".SecondActivity"
-            android:exported="false" />
-        <activity
+        <activity android:theme="@style/Theme.AppCompat.DayNight"
             android:name=".MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true">
