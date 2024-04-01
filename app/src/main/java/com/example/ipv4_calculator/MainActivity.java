@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -29,11 +30,37 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater()); //work with binding
         View view = binding.getRoot();
         setContentView(view);
+        Log.d("MainActivity", "onCreate");
 
         fragment1 = new Fragment1();
         fragment2 = new Fragment2();
 
         binding.fragment1ContainerView.setId(CONTENT_VIEW_ID);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("MainActivity", "onDestroy");
+
+        // Удалить диалоговое окно фрагмента
+        CustomDialogFragment dialogFragment = (CustomDialogFragment) getSupportFragmentManager().findFragmentByTag("CustomDialogFragment");
+        if (dialogFragment != null) {
+            dialogFragment.dismiss();
+        }
+    }
+
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        Log.d("MainActivity", "onConfigurationChanged");
+
+        // Пересоздать диалоговое окно фрагмента после поворота экрана
+        CustomDialogFragment dialogFragment = (CustomDialogFragment) getSupportFragmentManager().findFragmentByTag("CustomDialogFragment");
+        if (dialogFragment != null) {
+            dialogFragment.dismiss();
+            dialogFragment.show(getSupportFragmentManager(), "CustomDialogFragment");
+        }
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -57,6 +84,10 @@ public class MainActivity extends AppCompatActivity {
                 transaction.replace(CONTENT_VIEW_ID,fragment1);
                 transaction.addToBackStack(null);
                 transaction.commit();
+                return true;
+            case R.id.exit:
+                CustomDialogFragment customDialogFragment = new CustomDialogFragment();
+                customDialogFragment.show(getSupportFragmentManager(), "Exit dialog");
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

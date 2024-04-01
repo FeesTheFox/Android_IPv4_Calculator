@@ -18,4 +18,9 @@
         android:title="@string/home"
         app:showAsAction="ifRoom">
     </item>
+    <item
+        android:id="@+id/exit"
+        android:title="@string/Exit"
+        app:showAsAction="ifRoom">
+    </item>
 </menu>
